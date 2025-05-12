@@ -2,6 +2,10 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+# Needed for usign repos directly
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [project]
 name = "framework_user"
 version = "0.0.1"
@@ -10,7 +14,8 @@ authors = [
 ]
 
 dependencies = [
-
+  "test_framework_base[vendor_a]@git+https://github.com/aurimas-kudarauskas/TestFrameworkBase"
+  # "test_framework_base[vendor_b]@git+https://github.com/aurimas-kudarauskas/TestFrameworkBase"
 ]
 
 description = "A package that show how to use test framework"
@@ -21,3 +26,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+[project.scripts]
+framework_user= "framework_user.bin.framework_user_cli:main"

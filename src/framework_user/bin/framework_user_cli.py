@@ -1,10 +1,7 @@
-
-from importlib.metadata import version
-import argparse
-import pathlib
+from framework_user import UserFramework
 
 def main():
-    print("Hi I am a test framework")
+    UserFramework.run()
 
 if __name__ == "__main__":
     main()
